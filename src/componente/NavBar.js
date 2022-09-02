@@ -1,4 +1,5 @@
 import logo1 from "../imagenes/logo1.png"
+import { CartWidget } from "./CartWidget/Cartwidget";
 
 
 
@@ -11,6 +12,7 @@ const NavBar = () => {
                 <li>¿Quienes somos?</li>
                 <li>Smartwatch</li>
                 <li>Contacto</li>
+                <CartWidget />
             </ul>
         </div>
 
