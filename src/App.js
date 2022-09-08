@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './componente/NavBar';
-import ItemListConteiner from './componente/Items/ItemListContainer';
 import ItemCount from './componente/ItemCount/ItemCount';
+import ItemListContainer from './componente/ItemListContainer/ItemListContainer';
+
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListConteiner greeting = { greeting }/>
+      <ItemListContainer />
       <ItemCount stock={stock}/>
     </div>
   );
