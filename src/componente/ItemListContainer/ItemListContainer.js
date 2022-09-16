@@ -1,4 +1,4 @@
-import data from "../mockData";
+import {getItem} from "../mockData";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 
@@ -8,35 +8,21 @@ const ItemListContainer = () => {
     const [productList, setProductList] = useState( [] );
     
     useEffect(() => {
-        getProducts
-        .then((response) => {
-            setProductList(response);
-
-        })
+        getItem
+        .then((response) => setProductList(response.find((title) => title.id === 3)))
         .catch((error) => console.log(error));
-    }, []);
-
-    
-    const getProducts = new Promise((resolve, reject) => {
-            setTimeout (() => {
-                resolve(data);
-            },2000)
         });
-    
+        
     
 
 
   return (
     <>
-        <ItemList lista={productList} />
+        <ItemList productList={productList} />
     </>
     
-  );
-};
+  )
+}
+
 
 export default ItemListContainer
-
-
-//<div className="greeting">
-//<h2> {greeting} </h2>
-//</div>

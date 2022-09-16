@@ -26,6 +26,14 @@ const data = [
 
 ];
 
-export default data;
-
-
+export const getItem = (new Promise((resolve, reject) => {
+    let condition = true;
+    setTimeout (() => {
+        if (condition) { 
+           resolve(data)
+        } else {
+            reject("Algo salio mal")
+        } 
+    },2000)
+    })
+)
