@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
         id: "1",
         title: "W26",
@@ -16,6 +16,7 @@ const data = [
         title: "D18",
         price: 2500,
         image: 'https://http2.mlstatic.com/D_NQ_NP_940626-MLA51046586441_082022-O.webp',
+        
     },
     {
         id: "4",
@@ -24,16 +25,5 @@ const data = [
         image: 'https://http2.mlstatic.com/D_NQ_NP_785408-MLA50785869885_072022-O.webp',
     },
 
-];
+]
 
-export const getItem = (new Promise((resolve, reject) => {
-    let condition = true;
-    setTimeout (() => {
-        if (condition) { 
-           resolve(data)
-        } else {
-            reject("Algo salio mal")
-        } 
-    },2000)
-    })
-)
