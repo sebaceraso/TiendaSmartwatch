@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { data } from '../../mockData/MockData'
 import ItemList from './ItemList'
 
 export const ItemListContainer = ({ greeting, bg, pd }) => {
@@ -10,16 +11,16 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
     const {categoriaId} = useParams()
 
     //mock
-     useEffect(() => {
-         data     
-             .then((res) => {
+     useEffect(() => { 
+        data
+            .then((res) => {
                  if(categoriaId){
                      setItems(res.filter((item)=>item.category === categoriaId))
                  } else {
                      setItems(res)
                  }
-             })
-             .catch((err) => {
+                 })
+            .catch((err) => {
                  setError(err)
              })
              .finally(() => {

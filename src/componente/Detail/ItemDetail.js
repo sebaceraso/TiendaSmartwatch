@@ -9,7 +9,7 @@ export default function ItemDetail({ products }) {
     const [count, setCount] = useState(1)
     const stock = 10;
     const [compra, setCompra] = useState(false)
-    const { id, img, name, description, price } = products
+    const { id, image, name, description, price } = products
     const navegar = useNavigate()
     const {addItem} = useCart()
 
@@ -25,7 +25,7 @@ export default function ItemDetail({ products }) {
             name,
             price,
             stock,
-            img,
+            image,
             quantity: count
         }
         setCompra(true)
@@ -37,7 +37,7 @@ export default function ItemDetail({ products }) {
         <>
 
             <div className="card" style={{ width: '18rem' }} key={id}>
-                <img src={img} className="card-img-top" alt={name} />
+                <img src={image} className="card-img-top" alt={name} />
                 <div className="card-body m-1">
                     <p className="card-title">{name}</p>
                     <p className="card-text">{description}</p>

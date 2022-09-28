@@ -5,7 +5,7 @@ const productos = [
         category: 'nuevos',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis",
         price: 2000,
-        image: 'https://http2.mlstatic.com/D_NQ_NP_686611-MLA48934413710_012022-O.webp',
+        image: 'https://sc04.alicdn.com/kf/H57227614cc1446c1a87fa09b674206b5U.jpg',
         stock: 5,
     },
     {
