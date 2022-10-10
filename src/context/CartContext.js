@@ -8,10 +8,10 @@ export const CartProvider = ({ children }) => {
 
     const addItem = (item) => {
         const existInCart = cart.find((prod) => prod.id === item.id)
-        if(existInCart) {
-            const carritoActualizado = cart.map((prod)=> {
-                if(prod.id === item.id) {
-                    return {...prod, quantity:prod.quantity + item.quantity}
+        if (existInCart) {
+            const carritoActualizado = cart.map((prod) => {
+                if (prod.id === item.id) {
+                    return { ...prod, quantity: prod.quantity + item.quantity }
                 } else {
                     return prod
                 }
@@ -34,16 +34,16 @@ export const CartProvider = ({ children }) => {
         return cart.some((prod) => prod.id === id)
     }
 
-    const cartQuantity = () =>{
-        return cart.reduce((acc, prod)=> acc += prod.quantity, 0)
+    const cartQuantity = () => {
+        return cart.reduce((acc, prod) => acc += prod.quantity, 0)
     }
 
-    const cartTotal = () =>{
-        return cart.reduce((acc, prod)=> acc+= prod.price * prod.quantity, 0)
+    const cartTotal = () => {
+        return cart.reduce((acc, prod) => acc += prod.price * prod.quantity, 0)
     }
 
     return (
-        <CartContext.Provider value={{ cart, clear, isInCart, removeItem, addItem, cartQuantity, cartTotal}}>
+        <CartContext.Provider value={{ cart, clear, isInCart, removeItem, addItem, cartQuantity, cartTotal }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,7 +1,7 @@
+import { collection, doc, getDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { data } from '../../mockData/MockData'
-
+import { db } from "../../index"
 import ItemDetail from './ItemDetail'
 
 
@@ -11,20 +11,34 @@ function ItemDetailContainer() {
     const [loading, setLoading] = useState(true)
     const {id} = useParams()
     
+    // firabase
+    useEffect(()=>{
+        const coleccionProductos = collection(db, 'products')
+        const referenciaDoc = doc(coleccionProductos, id)
 
+        getDoc(referenciaDoc)
+            .then((result)=> {
+                setProducts({
+                    id: result.id,
+                    ...result.data()
+                })
+            })
+            .catch((error)=> console.log('error'))
+            .finally(()=>setLoading(false))
+    },[id])
 
     // mock
-    useEffect(()=>{
+    // useEffect(()=>{
         
-         setTimeout(()=>{
-            data
-           .then(res => {
-                 setProducts(res.find(item=> item.id === id))})
-                 .catch(error => console.log('hay un error'))
-               .finally(()=>setLoading(false))
-       }, 2000)
+    //     setTimeout(()=>{
+    //         data
+    //         .then(res => {
+    //             setProducts(res.find(item=> item.id === id))})
+    //         .catch(error => console.log('hay un error'))
+    //         .finally(()=>setLoading(false))
+    //     }, 2000)
         
-     }, [id])
+    // }, [id])
 
 
     return (

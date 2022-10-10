@@ -1,5 +1,4 @@
-import React from 'react'
-import Item from "../Items/Item"
+import Item from './Item'
 
 export default function ItemList({ items }) {
     return (

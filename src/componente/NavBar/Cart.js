@@ -1,18 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-//*version larga
-// import { useContext } from 'react'
-// import { CartContext } from '../../context/CartContext'
-
-//version corta
 import { useCart } from '../../context/CartContext'
 import CartItem from './CartItem'
 
 export default function Cart() {
-  //*forma larga de agregar context
-  // const {cart} = useContext(CartContext)
-
-  //* forma corta
   const {cart, cartTotal, clear} = useCart()
   console.log('carrito', cart)
   

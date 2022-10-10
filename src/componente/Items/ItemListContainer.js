@@ -19,28 +19,9 @@ export const ItemListContainer = () => {
         });
     };
 
-
     useEffect(() => {
         getProducts();
     }, [categoriaId]);
-
-    //mock
-    //   data
-    //     .then((res) => {
-    //        if(categoriaId){
-    //          setItems(res.filter((item)=>item.category === categoriaId))
-    //    } else {
-    //      setItems(res)
-    //}
-    //})
-    //.catch((err) => {
-    //   setError(err)
-    //})
-    //.finally(() => {
-    //  setLoading(false)
-    //})
-    //}, [categoriaId])
-
 
     return (
         <div>
