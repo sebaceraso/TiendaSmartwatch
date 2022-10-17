@@ -1,8 +1,8 @@
-import { collection, doc, getDoc } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { db } from "../../index"
-import ItemDetail from './ItemDetail'
+import { db } from "../firebase/firebase";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { useParams} from "react-router-dom";
+import ItemDetail from './ItemDetail';
 
 
 function ItemDetailContainer() {
@@ -11,9 +11,9 @@ function ItemDetailContainer() {
     const [loading, setLoading] = useState(true)
     const {id} = useParams()
     
-    // firabase
-    useEffect(()=>{
-        const coleccionProductos = collection(db, 'products')
+    // firebase
+    useEffect(() => {
+        const coleccionProductos = collection(db, 'items')
         const referenciaDoc = doc(coleccionProductos, id)
 
         getDoc(referenciaDoc)
@@ -27,19 +27,6 @@ function ItemDetailContainer() {
             .finally(()=>setLoading(false))
     },[id])
 
-    // mock
-    // useEffect(()=>{
-        
-    //     setTimeout(()=>{
-    //         data
-    //         .then(res => {
-    //             setProducts(res.find(item=> item.id === id))})
-    //         .catch(error => console.log('hay un error'))
-    //         .finally(()=>setLoading(false))
-    //     }, 2000)
-        
-    // }, [id])
-
 
     return (
         <>
@@ -51,4 +38,4 @@ function ItemDetailContainer() {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

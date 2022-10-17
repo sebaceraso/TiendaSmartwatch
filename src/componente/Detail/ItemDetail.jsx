@@ -8,11 +8,12 @@ import { useCart } from '../../context/CartContext';
 export default function ItemDetail({ products }) {
     const [count, setCount] = useState(1)
     const stock = 10;
-    const [compra, setCompra] = useState(false)
-    const { id, img, name, description, price } = products
-    const navegar = useNavigate()
-    const {addItem} = useCart()
-
+    const [compra, setCompra] = useState(false);
+    const { id, img, name, description, price } = products;
+    console.log(description);
+    const navegar = useNavigate();
+    const {addItem} = useCart();
+    console.log(products);
 
     const handleAumentar = () => count < stock ? setCount(count + 1) : alert('¡Lo sentimos!No tenemos mas unidades.')
 
@@ -58,7 +59,7 @@ export default function ItemDetail({ products }) {
                 </div>
             </div>
 
-            {/* })} */}
+            
         </>)
 
 }

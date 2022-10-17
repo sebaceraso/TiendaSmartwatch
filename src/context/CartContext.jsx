@@ -1,6 +1,5 @@
 const { createContext, useState, useContext } = require("react");
 
-//se crea el contexto y para poder usarlo hay que exportarlo
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
