@@ -29,3 +29,6 @@ React no viene con un mecanismo integrado de navegación por lo que instalaremos
 
 ### Firestore
 En el panel podemos acceder a firestore para empezar a diseñar nuestra capa de datos dinámicos, y poder enriquecer la app.
+
+## GIF
+![20221017003049](https://user-images.githubusercontent.com/103971805/196083766-6d434066-4b2c-4b49-956e-cf2eb3bbade3.gif)
